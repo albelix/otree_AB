@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Начало раунда
+    {% else %}
+        Начало нового раунда
+    {% endif%}
+{% endblock %}
+
+{% block content %}
+
+    {% if subsession.round_number == 1 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 1</strong>
+        </p>
+    {% elif subsession.round_number == 2 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 2</strong>
+        </p>
+    {% elif subsession.round_number == 3 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 3</strong>
+        </p>
+    {% elif subsession.round_number == 4 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 4</strong>
+        </p>
+    {% elif subsession.round_number == 5 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 5</strong>
+        </p>
+    {% elif subsession.round_number == 6 %}
+        <p>
+            После того, как Вы нажмете кнопку <strong>Далее</strong>, начнется <strong>Раунд 6</strong>
+        </p>
+    {% endif %}
+
+    {% if subsession.round_number == 1 %}
+        {% include Constants.instructions_template %}
+    {% endif %}
+
+
+
+{% next_button %}
+{% endblock %}

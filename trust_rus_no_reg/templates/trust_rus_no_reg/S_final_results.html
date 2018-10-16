@@ -1,0 +1,57 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Результаты игры
+{% endblock %}
+
+{% block content %}
+
+
+
+    <p>
+        В данной игре Вы были <strong>Участником 1</strong>
+    </p>
+
+    <p>
+        В качестве оплачиваемого раунда случайным образом был выбран <strong> Раунд {{ group.paying_round_num }}</strong>.
+        В начале этого раунда Вы получили <strong>{{ group.pie_size_final }} ECU</strong>.
+    </p>
+
+    <p>
+        Вы передали <strong>{{ group.S_transfer_final}} ECU</strong> Участнику 2,
+        эта сумма увеличилась в {{ group.factor_final}} раза,
+        то есть Участник 2 получил <strong> {{ group.mult_transfer_final }} ECU </strong>.
+    </p>
+    <p>
+        Участник 2 вернул Вам <strong> {{ group.R_transfer_final }} ECU </strong>,
+        поэтому Вы получили ({{ group.pie_size_final }} - {{ group.S_transfer_final}} + {{ group.R_transfer_final }})
+         = <strong>{{ group.S_final_payoff }} ECU </strong>.
+    </p>
+
+    <p>
+        Участник 2 получил  ({{ group.S_transfer_final}}х{{ group.factor_final}} - {{ group.R_transfer_final }}) =
+        <strong> {{ group.R_final_payoff }} ECU </strong>.
+    </p>
+
+    <p>
+        Также Вы ожидали, что Участник 2 вернет Вам примерно {{ group.S_prediction_final  }} ECU,
+        если Вы передадите ему {{ group.S_transfer_final  }} ECU,
+        Участник 2 вернул Вам {{ group.R_transfer_final }} ECU;
+        поэтому по итогам Вашего прогноза Вы получаете  <strong>{{ group.S_final_prediction_payoff}} ECU</strong>.
+    </p>
+
+    <p>
+        По итогам всей экспериментальной сессии Вы получаете <strong>{{ group.S_final_total_payoff}} ECU</strong>,
+        <!-- что переводится в <strong>{{ player.payoff }}</strong>.-->
+    </p>
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+
+
+    {% next_button %}
+    {% include Constants.instructions_template %}
+{% endblock %}

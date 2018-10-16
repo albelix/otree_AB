@@ -1,0 +1,137 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Результаты Раунда 1
+    {% elif subsession.round_number == 2 %}
+        Результаты Раунда 2
+    {% elif subsession.round_number == 3 %}
+        Результаты Раунда 3
+    {% elif subsession.round_number == 4 %}
+        Результаты Раунда 4
+    {% elif subsession.round_number == 5 %}
+        Результаты Раунда 5
+    {% elif subsession.round_number == 6 %}
+        Результаты Раунда 6
+    {% elif subsession.round_number == 7 %}
+        Результаты Раунда 7
+    {% elif subsession.round_number == 8 %}
+        Результаты Раунда 8
+    {% elif subsession.round_number == 9 %}
+        Результаты Раунда 9
+    {% elif subsession.round_number == 10 %}
+        Результаты Раунда 10
+    {% elif subsession.round_number == 11 %}
+        Результаты Раунда 11
+    {% elif subsession.round_number == 12 %}
+        Результаты Раунда 12
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <p>
+        Вы являетесь <strong>Участником 1</strong>
+    </p>
+
+    <p>
+    {% if subsession.round_number == 1 %}
+        Вы получили сумму в размере {{ endowment_iter_1 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_1 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_1 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 2 %}
+        Вы получили сумму в размере {{ endowment_iter_2 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_2 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_2 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 3 %}
+        Вы получили сумму в размере {{ endowment_iter_3 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_3 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_3 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 4 %}
+        Вы получили сумму в размере {{ endowment_iter_4 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_4 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_4 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 5 %}
+        Вы получили сумму в размере {{ endowment_iter_5 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_5 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_5 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 6 %}
+        Вы получили сумму в размере {{ endowment_iter_6 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_6 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_6 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 7 %}
+        Вы получили сумму в размере {{ endowment_iter_7 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_7 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_7 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 8 %}
+        Вы получили сумму в размере {{ endowment_iter_8 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_8 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_8 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 9 %}
+        Вы получили сумму в размере {{ endowment_iter_9 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_9 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_9 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 10 %}
+        Вы получили сумму в размере {{ endowment_iter_10 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_10 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_10 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 11 %}
+        Вы получили сумму в размере {{ endowment_iter_11 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_11 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_11 }} ECU для Участника 2.
+        <br>
+    {% elif subsession.round_number == 12 %}
+        Вы получили сумму в размере {{ endowment_iter_12 }} токенов,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_12 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_12 }} ECU для Участника 2.
+        <br>
+    {% endif %}
+    </p>
+
+    <p>
+        Вы получили <strong>{{ group.S_payoff_tokens}} токенов</strong>,
+        что для Вас переводится в <strong>{{ group.S_payoff_ecu }} ECU</strong>.
+    </p>
+    <p>
+        Вы отдали Участнику 2 <strong>{{ group.R_payoff_tokens}} токенов</strong>,
+        что для Участника 2 переводится в <strong>{{ group.R_payoff_ecu }} ECU</strong>.
+    </p>
+
+
+    {% next_button %}
+    {% include Constants.instructions_template %}
+{% endblock %}

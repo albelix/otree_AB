@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Второе решение Участника 2 в Раунде 1.
+    {% elif subsession.round_number == 2 %}
+        Второе решение Участника 2 в Раунде 2.
+    {% elif subsession.round_number == 3 %}
+        Второе решение Участника 2 в Раунде 3.
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    {% if subsession.round_number == 1 %}
+        <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_1 }} ECU</strong>,
+    {% elif subsession.round_number == 2 %}
+        <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_2 }} ECU</strong>,
+    {% elif subsession.round_number == 3 %}
+        <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_3 }} ECU</strong>.
+    {% endif %}
+    </p>
+
+
+    <p>
+        {% formfield group.R_prediction label='Как Вы думаете, сколько ECU из этой суммы Участник 1 передаст Вам в текущем раунде?' %}
+
+    </p>
+
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

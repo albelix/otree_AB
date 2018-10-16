@@ -1,0 +1,67 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Результаты игры
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        В данной игре Вы были <strong>Участником 2</strong>
+    </p>
+
+    <p>
+        В качестве оплачиваемого раунда случайным образом был выбран <strong> Раунд {{ group.paying_round_num }}</strong>,
+        в начале которого Участник 1 получил <strong>{{ group.pie_size_final }} ECU</strong>.
+
+    </p>
+
+
+    {% if group.S_transfer_final >= group.R_min_acceptance_final %}
+
+        <p>
+            Участник 1 передал Вам <strong>{{ group.S_transfer_final}} ECU</strong>.
+            Вы приняли предложение Участника 1,
+            поэтому Вы получили <strong>{{ group.R_final_payoff }} ECU</strong>,
+            Участник 1 оставил себе <strong>{{ group.S_final_payoff}} ECU</strong>.
+        </p>
+
+        <p>
+            Вы ожидали, что Участник 1 передаст Вам {{ group.R_prediction_final }} ECU,
+            Участник 1 передал Вам {{ group.S_transfer_final }} ECU;
+            поэтому по итогам Вашего прогноза Вы получаете  <strong>{{ group.R_final_prediction_payoff }} ECU</strong>.
+        </p>
+    {% else %}
+
+        <p>
+            Участник 1 передал Вам <strong>{{ group.S_transfer_final}} ECU</strong>.
+            Вы не приняли предложение Участника 1,
+            поэтому Вы получили <strong>0 ECU</strong>,
+            Участник 1 тоже получил <strong>0 ECU</strong>.
+        </p>
+        <p>
+            Вы ожидали, что Участник 1 передаст Вам {{ group.R_prediction_final }} ECU,
+            Участник 1 передал Вам {{ group.S_transfer_final }} ECU;
+            поэтому по итогам Вашего прогноза Вы получаете  <strong>{{ group.R_final_prediction_payoff }} ECU</strong>.
+        </p>
+        <p>
+            Итого за игру Вы получили <strong>{{group.R_total_payoff }} ECU</strong>.
+        </p>
+
+
+
+    {% endif %}
+
+    <p>
+    <!--    По итогам всей экспериментальной сессии Вы получаете <strong>{{ player.payoff }}</strong>. -->
+    </p>
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+
+    {% next_button %}
+    {% include Constants.instructions_template %}
+{% endblock %}

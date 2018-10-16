@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Результаты случайно выбранного раунда
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Вы <strong>Участник 1</strong>.
+    </p>
+
+    <p>
+        Случайным образом был выбран <strong> {{ session.vars.paying_round }} раунд</strong>.
+    </p>
+
+    <p>
+        По итогам этой игры Вы получили <strong>{{ group.S_final_payoff}} ECU</strong>.
+    </p>
+    <p>
+        По итогам этой игры Участник 2 получил <strong>{{ group.R_final_payoff}} ECU</strong>.
+    </p>
+
+
+    {% next_button %}
+    {% include Constants.instructions_template %}
+{% endblock %}

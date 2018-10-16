@@ -1,0 +1,256 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Второе решение Участника 1 в Раунде 1.
+    {% elif subsession.round_number == 2 %}
+        Второе решение Участника 1 в Раунде 2.
+    {% elif subsession.round_number == 3 %}
+        Второе решение Участника 1 в Раунде 3.
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+
+
+   <p>
+    {% if subsession.round_number == 1 %}
+
+        <strong>Напоминание:</strong> в текущем раунде Вы получили <strong>{{ endowment_iter_1 }} ECU</strong>.
+
+    {% elif subsession.round_number == 2 %}
+
+        <strong>Напоминание:</strong> в текущем раунде Вы получили <strong>{{ endowment_iter_2 }} ECU</strong>.
+
+    {% elif subsession.round_number == 3 %}
+
+        <strong>Напоминание:</strong> в текущем раунде Вы получили <strong>{{ endowment_iter_3 }} ECU</strong>.
+
+
+    {% endif %}
+    </p>
+
+    {% if subsession.round_number == 1 %}
+        <p>
+        Как Вы думаете, сколько вернул бы Вам Участник 2,
+        </p>
+        <p>
+        если бы Вы передали ему (10 ECU, 20 ECU, 30 ECU, 40 ECU, 50 ECU, 60 ECU, 70 ECU, 80 ECU, 90 ECU, 100 ECU),
+        </p>
+        <p>
+        то есть он получил (30 ECU, 60 ECU, 90 ECU, 120 ECU, 150 ECU, 180 ECU, 210 ECU, 240 ECU, 270 ECU, 300 ECU)
+        </p>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+        .tg .tg-n107{background-color:#68cbd0;color:#000000;vertical-align:top}
+        .tg .tg-fox7{background-color:#68cbd0;color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-kixb{background-color:#ffffff;color:#000000;vertical-align:top}
+        .tg .tg-pxng{background-color:#ffffff;color:#000000;vertical-align:top}
+        </style>
+        <table class="tg" style="undefined;table-layout: fixed; width: 619px">
+        <colgroup>
+        <col style="width: 323px">
+        <col style="width: 296px">
+        </colgroup>
+          <tr>
+            <th class="tg-fox7">Ваше предложение/ <br> Сумма, полученная Участником 2 </th>
+            <th class="tg-n107">Сколько вернет Участник 2</th>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 10 ECU/  <br> Сумма, полученная Участником 2: 30 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_1 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 20 ECU/ <br>Сумма, полученная Участником 2: 60 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_2 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 30 ECU/ <br>Сумма, полученная Участником 2: 90 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_3 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 40 ECU/ <br>Сумма, полученная Участником 2: 120 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_4 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 50 ECU/ <br>Сумма, полученная Участником 2: 150 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_5 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 60 ECU/ <br>Сумма, полученная Участником 2: 180 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_6 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 70 ECU/ <br>Сумма, полученная Участником 2: 210 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_7 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 80 ECU/ <br>Сумма, полученная Участником 2: 240 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_8 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 90 ECU/ <br>Сумма, полученная Участником 2: 270 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_9 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 100 ECU/ <br>Сумма, полученная Участником 2: 300 ECU</td>
+            <td class="tg-pxng">{% formfield group.S_prediction_10 label=""%}</td>
+          </tr>
+        </table>
+    {% elif subsession.round_number == 2 %}
+        <p>
+        Как Вы думаете, сколько вернул бы Вам Участник 2,
+        </p>
+        <p>
+        если бы Вы передали ему (5 ECU, 10 ECU, 15 ECU, 20 ECU, 25 ECU, 30 ECU, 35 ECU, 40 ECU, 45 ECU, 50 ECU),
+        </p>
+        <p>
+        то есть он получил (15 ECU, 30 ECU, 45 ECU, 60 ECU, 75 ECU, 90 ECU, 105 ECU, 120 ECU, 135 ECU, 150 ECU)
+        </p>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+        .tg .tg-n107{background-color:#68cbd0;color:#000000;vertical-align:top}
+        .tg .tg-fox7{background-color:#68cbd0;color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-kixb{background-color:#ffffff;color:#000000;vertical-align:top}
+        .tg .tg-pxng{background-color:#ffffff;color:#000000;vertical-align:top}
+        </style>
+        <table class="tg" style="undefined;table-layout: fixed; width: 619px">
+        <colgroup>
+        <col style="width: 323px">
+        <col style="width: 296px">
+        </colgroup>
+          <tr>
+            <th class="tg-fox7">Ваше предложение/ <br> Сумма, полученная Участником 2 </th>
+            <th class="tg-n107">Сколько вернет Участник 2</th>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 5 ECU/  <br> Сумма, полученная Участником 2: 15 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_1 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 10 ECU/ <br>Сумма, полученная Участником 2: 30 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_2 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 15 ECU/ <br>Сумма, полученная Участником 2: 45 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_3 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 20 ECU/ <br>Сумма, полученная Участником 2: 60 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_4 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 25 ECU/ <br>Сумма, полученная Участником 2: 75 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_5 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 30 ECU/ <br>Сумма, полученная Участником 2: 90 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_6 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 35 ECU/ <br>Сумма, полученная Участником 2: 105 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_7 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 40 ECU/ <br>Сумма, полученная Участником 2: 120 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_8 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 45 ECU/ <br>Сумма, полученная Участником 2: 135 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_9 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 50 ECU/ <br>Сумма, полученная Участником 2: 150 ECU</td>
+            <td class="tg-pxng">{% formfield group.S_prediction_10 label=""%}</td>
+          </tr>
+        </table>
+    {% elif subsession.round_number == 3 %}
+        <p>
+        Как Вы думаете, сколько вернул бы Вам Участник 2,
+        </p>
+        <p>
+        если бы Вы передали ему (10 ECU, 20 ECU, 30 ECU, 40 ECU, 50 ECU, 60 ECU, 70 ECU, 80 ECU, 90 ECU, 100 ECU),
+        </p>
+        <p>
+        то есть он получил (15 ECU, 30 ECU, 45 ECU, 60 ECU, 75 ECU, 90 ECU, 105 ECU, 120 ECU, 135 ECU, 150 ECU)
+        </p>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;border-color:#aabcfe;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#669;background-color:#e8edff;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#aabcfe;color:#039;background-color:#b9c9fe;}
+        .tg .tg-n107{background-color:#68cbd0;color:#000000;vertical-align:top}
+        .tg .tg-fox7{background-color:#68cbd0;color:#000000;text-align:center;vertical-align:top}
+        .tg .tg-kixb{background-color:#ffffff;color:#000000;vertical-align:top}
+        .tg .tg-pxng{background-color:#ffffff;color:#000000;vertical-align:top}
+        </style>
+        <table class="tg" style="undefined;table-layout: fixed; width: 619px">
+        <colgroup>
+        <col style="width: 323px">
+        <col style="width: 296px">
+        </colgroup>
+          <tr>
+            <th class="tg-fox7">Ваше предложение/ <br>Сумма, полученная Участником 2 </th>
+            <th class="tg-n107">Сколько вернет Участник 2</th>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 10 ECU/  <br> Сумма, полученная Участником 2: 15 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_1 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 20 ECU/ <br>Сумма, полученная Участником 2: 30 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_2 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 30 ECU/ <br>Сумма, полученная Участником 2: 45 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_3 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 40 ECU/ <br>Сумма, полученная Участником 2: 60 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_4 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 50 ECU/ <br>Сумма, полученная Участником 2: 75 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_5 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 60 ECU/ <br>Сумма, полученная Участником 2: 90 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_6 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 70 ECU/ <br>Сумма, полученная Участником 2: 105 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_7 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 80 ECU/ <br>Сумма, полученная Участником 2: 120 ECU </td>
+            <td class="tg-pxng">{% formfield group.S_prediction_8 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-kixb"> Ваше предложение: 90 ECU/ <br>Сумма, полученная Участником 2: 135 ECU </td>
+            <td class="tg-kixb">{% formfield group.S_prediction_9 label=""%}</td>
+          </tr>
+          <tr>
+            <td class="tg-pxng"> Ваше предложение: 100 ECU/ <br>Сумма, полученная Участником 2: 150 ECU</td>
+            <td class="tg-pxng">{% formfield group.S_prediction_10 label=""%}</td>
+          </tr>
+        </table>
+    {% endif %}
+
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+
+    <p>
+    {% next_button %}
+    </p>
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Второе решение Участника 2 в Раунде 1.
+    {% elif subsession.round_number == 2 %}
+        Второе решение Участника 2 в Раунде 2.
+    {% elif subsession.round_number == 3 %}
+        Второе решение Участника 2 в Раунде 3.
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+    {% if subsession.round_number == 1 %}
+        <p>
+            <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_1 }} ECU</strong>.
+        </p>
+        <p>
+            Участник 1 передал Вам <strong> {{ group.S_transfer }} ECU </strong>,
+            это увеличилось в {{ factor_iter_1 }} раза,
+            поэтому Вы получили <strong>{{ group.mult_transfer }} ECU </strong>.
+        </p>
+
+    {% elif subsession.round_number == 2 %}
+        <p>
+            <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_2 }} ECU</strong>.
+        </p>
+        <p>
+            Участник 1 передал Вам <strong> {{ group.S_transfer }} ECU </strong>,
+            это увеличилось в {{ factor_iter_2 }} раза,
+            поэтому Вы получили <strong>{{ group.mult_transfer }} ECU </strong>.
+        </p>
+    {% elif subsession.round_number == 3 %}
+        <p>
+            <strong>Напоминание:</strong> в текущем раунде Участник 1 получил <strong>{{ endowment_iter_3 }} ECU</strong>.
+        </p>
+        <p>
+            Участник 1 передал Вам <strong> {{ group.S_transfer }} ECU </strong>,
+            это увеличилось в {{ factor_iter_3 }} раза,
+            поэтому Вы получили <strong>{{ group.mult_transfer }} ECU </strong>.
+        </p>
+    {% endif %}
+
+
+
+    {% formfield group.R_transfer label='Пожалуйста, укажите, сколько ECU из суммы, которую Вы получили, Вы хотите вернуть Участнику 1:' %}
+
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+    <p>{% next_button %}</p>
+    {% include Constants.instructions_template %}
+
+{% endblock %}

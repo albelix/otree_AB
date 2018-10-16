@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Первое решение Участника 2 в Раунде 1.
+    {% elif subsession.round_number == 2 %}
+        Первое решение Участника 2 в Раунде 2.
+    {% elif subsession.round_number == 3 %}
+        Первое решение Участника 2 в Раунде 3.
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Вы являетесь <strong>Участником 2</strong>
+    </p>
+
+    <p>
+    {% if subsession.round_number == 1 %}
+        В текущем раунде Участник 1 получил <strong>{{ endowment_iter_1 }} ECU</strong>.
+        Все, что Участник 1 передаст Вам, увеличится в {{ factor_iter_1 }} раза.
+    {% elif subsession.round_number == 2 %}
+        В текущем раунде Участник 1 получил <strong>{{ endowment_iter_2 }} ECU</strong>.
+        Все, что Участник 1 передаст Вам, увеличится в {{ factor_iter_2 }} раза.
+    {% elif subsession.round_number == 3 %}
+        В текущем раунде Участник 1 получил <strong>{{ endowment_iter_3 }} ECU</strong>.
+        Все, что Участник 1 передаст Вам, увеличится в {{ factor_iter_3 }} раза.
+    {% endif %}
+    </p>
+
+
+    <p>
+        {% formfield group.R_prediction label='Как Вы думаете, сколько ECU из этой суммы Участник 1 передаст Вам в текущем раунде?' %}
+
+    </p>
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+
+
+    <p>{% next_button %}</p>
+    {% include Constants.instructions_template %}
+
+{% endblock %}

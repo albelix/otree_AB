@@ -1,0 +1,84 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    {% if subsession.round_number == 1 %}
+        Второе решение Участника 2 в Раунде 1.
+    {% elif subsession.round_number == 2 %}
+        Второе решение Участника 2 в Раунде 2.
+    {% elif subsession.round_number == 3 %}
+        Второе решение Участника 2 в Раунде 3.
+    {% elif subsession.round_number == 4 %}
+        Второе решение Участника 2 в Раунде 4.
+    {% elif subsession.round_number == 5 %}
+        Второе решение Участника 2 в Раунде 5.
+    {% elif subsession.round_number == 6 %}
+        Второе решение Участника 2 в Раунде 6.
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+    <p>
+    {% if subsession.round_number == 1 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_1 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_1 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_1 }} ECU для Участника 1.
+        <br>
+    {% elif subsession.round_number == 2 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_2 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_2 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_2 }} ECU для Участника 1.
+        <br>
+    {% elif subsession.round_number == 3 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_3 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_3 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_3 }} ECU для Участника 1.
+        <br>
+    {% elif subsession.round_number == 4 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_4 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_4 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_4 }} ECU для Участника 1.
+        <br>
+    {% elif subsession.round_number == 5 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_5 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_5 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_5 }} ECU для Участника 1.
+        <br>
+    {% elif subsession.round_number == 6 %}
+         В текущем раунде Участник 1 получил <strong>{{ endowment_iter_6 }}</strong> токенов,
+        <br>
+        1 токен = {{ unit_values_for_R_iter_6 }} ECU для Вас,
+        <br>
+        1 токен = {{ unit_values_for_S_iter_6 }} ECU для Участника 1.
+        <br>
+    {% endif %}
+    </p>
+
+    <p>
+
+        {% formfield group.R_min_offer label='Какую МИНИМАЛЬНУЮ сумму, которую Вам может передать Участник 1 в текущем раунде, Вы считаете приемлемой?' %}
+
+    </p>
+
+
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

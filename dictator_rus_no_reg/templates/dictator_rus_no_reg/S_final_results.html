@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Результаты игры
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        В данной игре Вы были <strong>Участником 1</strong>
+    </p>
+
+    <p>
+        В качестве оплачиваемого раунда случайным образом был выбран <strong> Раунд {{ group.paying_round_num }}</strong>,
+        в начале которого Вы получили <strong>{{ group.pie_size_final }} токенов</strong>,
+        <br>
+        1 токен = {{ group.unit_value_for_S_final }} ECU для Вас,
+        <br>
+        1 токен = {{ group.unit_value_for_R_final }} ECU для Участника 2.
+    <br>
+    </p>
+
+
+     <p>
+        Вы оставили себе <strong>{{ group.S_final_payoff_tokens}} {{ group.S_payoff_form}}</strong>,
+        что для Вас соответствует <strong>{{ group.S_final_payoff_ecu }} ECU</strong>.
+    </p>
+    <p>
+        Вы отдали <strong>{{ group.R_final_payoff_tokens }} {{ group.R_payoff_form}}</strong> Участнику 2,
+        что для него соответствует <strong>{{ group.R_final_payoff_ecu }} ECU</strong>.
+    </p>
+
+{#    <p>#}
+{#        Также Вы ожидали, что Участника 2 удовлетворит {{ group.S_prediction_final  }} {{ group.S_prediction_form  }},#}
+{#        Участник 2 указал, что его удовлетворяет {{ group.R_min_offer_final  }} {{ group.R_min_offer_form  }};#}
+{#        поэтому по итогам Вашего прогноза Вы получаете  <strong>{{ group.S_final_prediction_payoff_tokens}} токенов</strong>,#}
+{#        что для Вас соответствует <strong>{{ group.S_final_prediction_payoff_ecu }} экю</strong>.#}
+{#    </p>#}
+
+    <p>
+        Пожалуйста, нажмите кнопку <strong>Далее</strong>.
+    </p>
+    {% next_button %}
+    {% include Constants.instructions_template %}
+{% endblock %}
