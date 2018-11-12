@@ -1,0 +1,15 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Player's valuation
+{% endblock %}
+
+{% block content %}
+    <p>
+        Your role is {{ player.role }}.
+        Your valuation is {{ player.valuation }}
+    </p>
+    {% next_button %}
+
+{% endblock %}

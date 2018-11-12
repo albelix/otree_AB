@@ -1,0 +1,69 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    {% if player.role == "Seller" and player.subrole == "auctioneer" and player.auc_realised == True %}
+        <p>
+            You  were seller auctioneer,
+            your auction was realised, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+    {% if player.role == "Seller" and player.subrole == "auctioneer" and player.auc_realised == False %}
+        <p>
+            You  were seller auctioneer,
+            your auction was not realised, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+
+
+    {% if player.role == "Buyer" and player.subrole == "auctioneer" and player.auc_realised == True %}
+        <p>
+            You  were buyer auctioneer,
+            your auction was realised, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+    {% if player.role == "Buyer" and player.subrole == "auctioneer" and player.auc_realised == False %}
+        <p>
+            You  were buyer auctioneer,
+            your auction was not realised, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+
+
+    {% if player.role == "Seller" and player.subrole == "participant" and player.part_is_winner == True %}
+        <p>
+            You  were seller participant,
+            you won the auction, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+    {% if player.role == "Seller" and player.subrole == "participant" and player.part_is_winner == False %}
+        <p>
+            You  were seller participant,
+            you did not win the auction, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+
+
+    {% if player.role == "Buyer" and player.subrole == "participant" and player.part_is_winner == True %}
+        <p>
+            You  were buyer participant,
+            you won the auction, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+    {% if player.role == "Buyer" and player.subrole == "participant" and player.part_is_winner == False %}
+        <p>
+            You  were buyer participant,
+            you did not win the auction, so your payoff is <strong>{{ player.payoff}}</strong>.
+        </p>
+    {% endif %}
+        <p>
+            Your cumulative payoff is <strong> {{my_payoff}} </strong>.
+        </p>
+    {% next_button %}
+{% endblock %}
+
+

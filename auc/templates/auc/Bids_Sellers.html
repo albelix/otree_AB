@@ -1,0 +1,22 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Choose the auction and make the bid
+{% endblock %}
+
+{% block content %}
+
+    <p>
+        Your role is {{ player.role }}.
+        Your valuation is {{ player.valuation }}.
+    </p>
+    <p>
+        Your subrole is {{ player.subrole }}.
+    </p>
+
+    {% formfield player.sellerchoice label="Decide which auction you would like to participate:" %}
+    {% formfield player.sellerbid label="Make the bid for chosen auction" %}
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Auctioneer or participant decision
+{% endblock %}
+
+{% block content %}
+    <p>
+        Your role is {{ player.role }}.
+        Your valuation is {{ player.valuation }}
+    </p>
+    {% formfield player.subrole label="Decide whether to be an auctioneer or participant:" %}
+
+    {% next_button %}
+
+{% endblock %}
