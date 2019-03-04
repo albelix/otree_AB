@@ -4,7 +4,7 @@
 {% block title %}  Принятие решений III: раунд {{ current_round }} из {{ Constants.num_rounds }}  {% endblock %}
 
 {% block content %}
-    {% include 'PG_standard/Instructions.html' %}
+    {% include 'PG_punishment/Instructions.html' %}
 
  <p>
 <!--    <b>Это игра на создание общественного блага.</b> -->
@@ -15,12 +15,12 @@
 
      <br> <br>
 
-     Каждая единица на личном счету приносит 1 рубль лично данному участнику.
+     Каждая единица на личном счету приносит 1 очко лично данному участнику.
 
     <br>
 
     Каждая единица на общем счету приносит {{ Constants.efficiency_factor }}
-    рубль каждому участнику из данной группы, вне зависимости от его или ее взноса.
+    очко каждому участнику из данной группы, вне зависимости от его или ее взноса.
 
      <br> <br>
 
@@ -35,7 +35,7 @@
 </p>
 
 
-{% formfield player.contribution with label="Сколько Вы внесете на общий счет?" %}
+{% formfield player.contribution  label="Сколько Вы внесете на общий счет?" %}
 
 {% next_button %}
 

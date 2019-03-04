@@ -1,0 +1,47 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Принятие решений II - результаты для участника {{ player.id_in_group }}
+{% endblock %}
+
+{% block content %}
+
+{#    <table class="table">#}
+{#        <tr>#}
+{#            <th>Round</th>#}
+{#            <th>Player and outcome</th>#}
+{#        </tr>#}
+{#        {% for p in player_in_all_rounds %}#}
+{#            <tr>#}
+{#                <td>Вы участник You were the {{ p.role }} and {% if p.is_winner %} won {% else %} lost {% endif %}</td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+
+    <p>
+{#        The paying round was {{ paying_round }}.#}
+        В этой игре вы заработали {{ total_payoff_full }}.
+
+        <br> <br>
+
+        Ваша накопленная сумма на общем счету составила {{ group.global_contribution }} из {{ Constants.threshold }} ({{ group.current_share }}%).
+
+        <br> <br>
+
+{#        {% if global.outcome == 1 %}#}
+            Если вам повезет, вы заработаете {{ total_payoff_full }}
+{#        {% else %}#}
+
+        <br> <br>
+
+        Если вам <strong> не </strong> повезет, вы заработете {{ total_payoff_cut }}
+{#        {% endif %}#}
+
+        <br> <br>
+
+        Положитесь на волю случая и пожалуйста, дождитесь окончания!
+    </p>
+
+
+{% endblock %}
